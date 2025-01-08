@@ -34,6 +34,7 @@ export class MenuBar extends LitElement {
         <ul>
           <li><a href="./">Home</a></li>
           <li><a href="./about">About</a></li>
+          <li><a href="./course">Courses</a></li>
           <li></li>
         </ul>
       </nav>
