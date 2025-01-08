@@ -3,6 +3,7 @@ import { Router } from '@vaadin/router';
 import './pages/home-page';
 import './pages/about-page';
 import './pages/courses-page';
+import './pages/course-page';
 import './pages/page-not-found';
 
 const outlet = document.querySelector('body');
@@ -12,5 +13,8 @@ router.setRoutes([
   { path: `/`, component: 'home-page' },
   { path: `/about`, component: 'about-page' },
   { path: `/course`, component: 'courses-page' },
+  { path: `/course/:code`, component:'course-page'},
   { path: '(.*)', component: 'page-not-found' }
 ]);
+
+export { router }

@@ -9,6 +9,10 @@ class CoursesController {
   getCourses() {
     return this.courseService.getCourses();
   }
+
+  getCourse(courseID) {
+    return this.courseService.getCourse(courseID);
+  }
 }
 
 const coursesController = new CoursesController(coursesService);

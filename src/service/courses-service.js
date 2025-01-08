@@ -30,6 +30,12 @@ class CourseService {
       resolve(this.courses);
     });
   }
+
+  getCourse(courseId) {
+    return new Promise((resolve) => {
+      resolve(this.courses.find((course) => course.code === courseId))
+    });
+  }
 }
 
 const coursesService = new CourseService();
