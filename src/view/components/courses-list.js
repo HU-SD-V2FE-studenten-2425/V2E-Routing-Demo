@@ -1,11 +1,10 @@
-import { LitElement, css, html } from 'lit';
-import { coursesController } from '../../controller/courses-controller';
+import { LitElement, css, html } from "lit";
+import { coursesController } from "../../controller/courses-controller";
 
 export class CoursesList extends LitElement {
-
   static properties = {
-    courses: { type: Array }
-  }
+    courses: { type: Array },
+  };
 
   constructor() {
     super();
@@ -14,25 +13,23 @@ export class CoursesList extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
-    coursesController.getCourses()
-    .then((courses) => {
+    coursesController.getCourses().then((courses) => {
       this.courses = courses;
-      console.log('connectedCallback', this.courses);
-    })
+      console.log("connectedCallback", this.courses);
+    });
   }
-    
 
   render() {
-
-    console.log('render', this.courses);
+    console.log("render", this.courses);
 
     return html`
       <h1>Courses</h1>
       <ul>
-        <li></li>
+        ${this.courses.map((course) => html`<li>
+        <a href="./course/${course.code}">${course.name}</a></li>`)}
       </ul>
     `;
   }
 }
 
-customElements.define('courses-list', CoursesList);
+customElements.define("courses-list", CoursesList);
